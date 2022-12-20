@@ -7,5 +7,5 @@ RUN apk add --no-cache jq
 COPY ./ .
 COPY --from=builder /httpstdin /usr/src/httpstdin
 RUN chmod +x run.sh 
-ENTRYPOINT ["/run.sh"]
+ENTRYPOINT ["./run.sh"]
 EXPOSE 8080
