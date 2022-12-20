@@ -17,7 +17,7 @@ func main() {
 	}
 	defer stdin.Close()
 	stdin.Seek(0, 0)
-	buf := make([]byte, 1024)
+	buf := make([]byte, 1024*1024*1024)
 	n, err := stdin.Read(buf)
 	for {
 		n, err := stdin.Read(buf)
