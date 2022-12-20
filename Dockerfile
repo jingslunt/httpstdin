@@ -8,4 +8,4 @@ COPY ./ .
 COPY --from=builder /httpstdin .
 RUN chmod +x run.sh 
 ENTRYPOINT ["/run.sh"]
-EXPOSE 9000
+EXPOSE 8080
