@@ -1,6 +1,6 @@
 FROM golang:1.19 as builder
 COPY ./ .
-RUN CGO_ENABLED=0 GOOS=linux go build
+RUN CGO_ENABLED=0 GOOS=linux go build -o /httpstdin main.go
 
 FROM edenhill/kafkacat:1.6.0
 RUN apk add --no-cache jq
