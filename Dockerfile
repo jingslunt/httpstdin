@@ -3,7 +3,7 @@ COPY ./ .
 RUN CGO_ENABLED=0 GOOS=linux go build
 
 FROM edenhill/kafkacat:1.6.0
-RUN apt-get update && apt-get install -y jq
+RUN apk add --no-cache jq
 COPY ./ .
 COPY --from=builder /httpstdin /usr/src/httpstdin
 RUN chmod +x run.sh 
